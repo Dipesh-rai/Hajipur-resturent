@@ -8,6 +8,7 @@
   --body-text:rgb(75, 85, 99);
   --background-text:rgb(156, 163, 175);
   --media-background:#292F3D;
+  --background-text:rgb(255, 255, 255);
   --primary-font: "Playfair Display", serif;
   --secondary-font: "Nunito", sans-serif;
   --ternary-font: "Pacifico", cursive;
@@ -277,9 +278,16 @@ footer .top-footer .contact i:hover {
 .half-half {
   position: relative;
   z-index: 50;
+  color: var(--background-text);
 }
 .half-half .primary {
   background-color: var(--background-color);
+}
+.half-half .primary h2 {
+  color: white;
+}
+.half-half .primary p {
+  text-align: center;
 }
 .half-half .secondary {
   background-color: var(--primary-color);

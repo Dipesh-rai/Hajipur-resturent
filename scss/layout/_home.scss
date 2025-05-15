@@ -65,8 +65,15 @@
 .half-half{
     position:relative;
     z-index:50;
+    color:var(--background-text);
     .primary{
         background-color:var(--background-color);
+        h2{
+            color:white;
+        }
+        p{
+            text-align:center;
+        }
     }
     .secondary{
         background-color:var(--primary-color);
