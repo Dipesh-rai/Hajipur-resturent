@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+:root {
+    --primary-color: #EAAD38;
+    --secondary-color: #DC6441;
+    --ternary-color:#800020;
+    --text-heading:#1F2937;
+    --background-color:#111827;
+    --body-text:rgb(75, 85, 99);
+    --background-text:rgb(156, 163, 175);
+    --media-background:#292F3D;
+
+    // google fonts
+    --primary-font: "Playfair Display", serif;
+    --secondary-font: "Nunito", sans-serif;
+    --ternary-font: "Pacifico", cursive;
+
+    /* Text scale in REM (scalable & responsive) */
+    --text-xs: 0.75rem;
+    /* 12px */
+    --text-sm: 0.875rem;
+    /* 14px */
+    --text-md: 1rem;
+    /* 16px */
+    --text-lg: 1.25rem;
+    /* 20px */
+    --text-xl: 1.875rem;
+    /* 30px */
+    --text-2xl: 2.5rem;
+    /* 40px */
+    --text-3xl: 3rem;
+    /* 48px (optional) */
+}

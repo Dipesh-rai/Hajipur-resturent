@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saveur | Fine Dining Experience</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#800020',secondary:'#FFD700'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-section {
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0.4) 70%), url('https://readdy.ai/api/search-image?query=A%20luxurious%20restaurant%20setting%20with%20a%20beautifully%20plated%20signature%20dish%20in%20the%20foreground.%20The%20image%20shows%20a%20sophisticated%20dining%20atmosphere%20with%20soft%20ambient%20lighting%2C%20elegant%20table%20settings%20with%20crystal%20glasses%2C%20and%20a%20perfectly%20presented%20gourmet%20dish%20with%20artistic%20food%20presentation.%20The%20background%20is%20slightly%20blurred%20to%20create%20depth%2C%20showing%20other%20diners%20enjoying%20their%20meals%20in%20a%20high-end%20restaurant%20environment.&width=1920&height=1080&seq=12345&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+        }
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .menu-card img {
+            transition: transform 0.5s ease;
+        }
+        .menu-card:hover img {
+            transform: scale(1.05);
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .custom-checkbox {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .custom-checkbox input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .checkmark {
+            height: 20px;
+            width: 20px;
+            background-color: white;
+            border: 2px solid #800020;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .custom-checkbox input:checked ~ .checkmark:after {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: #800020;
+            border-radius: 2px;
+        }
+        .testimonial-card {
+            transition: transform 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #FFD700;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header & Hero Section -->
+    <header class="hero-section h-screen relative">
+        <nav class="absolute top-0 left-0 w-full z-10 px-6 py-4 flex justify-between items-center">
+            <div class="text-3xl font-['Pacifico'] text-white">logo</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-white font-medium hover:text-secondary">Home</a>
+                <a href="#menu" class="nav-link text-white font-medium hover:text-secondary">Menu</a>
+                <a href="#about" class="nav-link text-white font-medium hover:text-secondary">About</a>
+                <a href="#contact" class="nav-link text-white font-medium hover:text-secondary">Contact</a>
+            </div>
+            <div class="md:hidden w-10 h-10 flex items-center justify-center">
+                <i class="ri-menu-line text-white ri-2x"></i>
+            </div>
+        </nav>
+        
+        <div class="container mx-auto h-full flex items-center">
+            <div class="w-full max-w-2xl px-6 md:px-0">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">Culinary Excellence in Every Bite</h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-8">Experience the perfect blend of traditional techniques and modern innovation in our award-winning cuisine.</p>
+                <button class="bg-primary hover:bg-opacity-90 text-white px-8 py-3 rounded-button font-medium transition duration-300 whitespace-nowrap">Reserve Now</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Our Story</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Founded in 2010 by Chef Michael Laurent, Saveur has been dedicated to creating unforgettable dining experiences that blend traditional techniques with modern innovation. Our commitment to using only the finest seasonal ingredients sourced from local farmers ensures that each dish tells a story of passion and craftsmanship.</p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">Over the years, we've earned a reputation for culinary excellence, receiving numerous accolades including three Michelin stars and being named among the World's 50 Best Restaurants for five consecutive years.</p>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+                            <i class="ri-award-line text-white ri-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Award-Winning Cuisine</h4>
+                            <p class="text-sm text-gray-600">Three-time Michelin Star recipient</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="relative">
+                        <div class="absolute -top-4 -left-4 w-full h-full border-2 border-secondary rounded-lg"></div>
+                        <img src="https://readdy.ai/api/search-image?query=An%20elegant%20restaurant%20interior%20with%20warm%20ambient%20lighting.%20The%20space%20features%20sophisticated%20decor%20with%20dark%20wood%20tables%2C%20comfortable%20upholstered%20chairs%2C%20and%20tasteful%20art%20on%20the%20walls.%20Crystal%20chandeliers%20hang%20from%20the%20ceiling%2C%20casting%20a%20soft%20glow%20over%20the%20dining%20area.%20The%20restaurant%20has%20a%20cozy%20yet%20upscale%20atmosphere%20with%20white%20tablecloths%2C%20polished%20silverware%2C%20and%20wine%20glasses%20at%20each%20setting.%20Some%20tables%20are%20occupied%20by%20well-dressed%20diners%20enjoying%20their%20meals.&width=600&height=800&seq=12346&orientation=portrait" alt="Restaurant Interior" class="rounded-lg shadow-xl object-cover object-top w-full h-[500px]">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Highlights Section -->
+    <section id="menu" class="py-20">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Menu Highlights</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Discover our chef's carefully crafted selection of dishes that showcase the finest seasonal ingredients and innovative culinary techniques.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Menu Item 1 -->
+                <div class="menu-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=A%20beautifully%20plated%20dish%20of%20seared%20scallops%20on%20a%20dark%20plate.%20The%20scallops%20are%20perfectly%20caramelized%20with%20a%20golden-brown%20crust.%20They%20are%20arranged%20artistically%20with%20colorful%20vegetable%20purees%2C%20microgreens%2C%20and%20edible%20flowers.%20The%20dish%20is%20garnished%20with%20a%20delicate%20sauce%20drizzled%20around%20the%20plate.%20The%20background%20is%20slightly%20blurred%2C%20focusing%20attention%20on%20the%20exquisite%20presentation%20of%20this%20fine%20dining%20seafood%20dish.&width=600&height=400&seq=12347&orientation=landscape" alt="Seared Scallops" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Seared Atlantic Scallops</h3>
+                            <span class="text-primary font-bold">$32</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Hand-dived scallops seared to perfection, served with cauliflower purée, black truffle, and champagne foam.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                <i class="ri-fire-line"></i>
+                            </div>
+                            <span>Chef's Signature</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 2 -->
+                <div class="menu-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=A%20gourmet%20beef%20tenderloin%20dish%20on%20an%20elegant%20white%20plate.%20The%20tenderloin%20is%20perfectly%20cooked%20to%20medium-rare%20with%20a%20caramelized%20exterior%2C%20sliced%20to%20show%20the%20pink%20center.%20Its%20accompanied%20by%20roasted%20vegetables%2C%20a%20red%20wine%20reduction%20sauce%20artfully%20drizzled%20on%20the%20plate%2C%20and%20garnished%20with%20fresh%20herbs.%20The%20dish%20is%20presented%20in%20a%20fine%20dining%20style%20with%20attention%20to%20color%20contrast%20and%20artistic%20plating.%20The%20background%20is%20neutral%20to%20highlight%20the%20food.&width=600&height=400&seq=12348&orientation=landscape" alt="Beef Tenderloin" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Aged Beef Tenderloin</h3>
+                            <span class="text-primary font-bold">$48</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">28-day dry-aged beef tenderloin with truffle mashed potatoes, seasonal vegetables, and red wine reduction.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                <i class="ri-star-line"></i>
+                            </div>
+                            <span>Most Popular</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 3 -->
+                <div class="menu-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=A%20beautifully%20plated%20lobster%20risotto%20on%20an%20elegant%20plate.%20The%20creamy%20risotto%20has%20a%20rich%20golden%20color%20with%20pieces%20of%20bright%20red%20lobster%20meat%20arranged%20artistically%20on%20top.%20The%20dish%20is%20garnished%20with%20fresh%20herbs%2C%20edible%20flowers%2C%20and%20a%20light%20dusting%20of%20microgreens.%20A%20delicate%20sauce%20is%20drizzled%20around%20the%20plate.%20The%20presentation%20is%20sophisticated%20and%20colorful%2C%20typical%20of%20fine%20dining%20establishments.%20The%20background%20is%20neutral%20to%20highlight%20the%20exquisite%20plating.&width=600&height=400&seq=12349&orientation=landscape" alt="Lobster Risotto" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Maine Lobster Risotto</h3>
+                            <span class="text-primary font-bold">$42</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Creamy Arborio rice cooked with lobster bisque, topped with butter-poached Maine lobster and fresh herbs.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                <i class="ri-heart-line"></i>
+                            </div>
+                            <span>Guest Favorite</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-button font-medium transition duration-300 whitespace-nowrap">View Full Menu</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Today's Special Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://readdy.ai/api/search-image?query=A%20stunning%20gourmet%20dish%20presented%20on%20a%20dark%20plate%20against%20a%20neutral%20background.%20The%20dish%20features%20a%20perfectly%20cooked%20rack%20of%20lamb%20with%20a%20herb%20crust%2C%20artistically%20plated%20with%20colorful%20vegetable%20purees%2C%20roasted%20seasonal%20vegetables%2C%20and%20microgreens.%20The%20presentation%20is%20elegant%20and%20sophisticated%20with%20careful%20attention%20to%20color%20contrast%20and%20composition.%20A%20delicate%20sauce%20is%20drizzled%20around%20the%20plate.%20The%20lighting%20highlights%20the%20textures%20and%20colors%20of%20the%20food%2C%20creating%20a%20mouthwatering%20appearance%20typical%20of%20high-end%20restaurant%20cuisine.&width=800&height=600&seq=12350&orientation=landscape" alt="Today's Special" class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                <div class="md:w-1/2">
+                    <div class="inline-block px-3 py-1 bg-secondary bg-opacity-20 text-primary rounded-full mb-4">Today's Special</div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Herb-Crusted Rack of Lamb</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Our chef's special creation for today features a perfectly cooked rack of lamb encrusted with fresh herbs and Dijon mustard. Served with roasted heirloom vegetables, potato fondant, and a rich red wine jus.</p>
+                    <div class="flex items-center space-x-6 mb-8">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 flex items-center justify-center mr-2">
+                                <i class="ri-time-line text-primary"></i>
+                            </div>
+                            <span class="text-gray-700">Limited availability</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 flex items-center justify-center mr-2">
+                                <i class="ri-price-tag-3-line text-primary"></i>
+                            </div>
+                            <span class="text-gray-700">$52</span>
+                        </div>
+                    </div>
+                    <button class="bg-primary hover:bg-opacity-90 text-white px-8 py-3 rounded-button font-medium transition duration-300 whitespace-nowrap">Reserve Your Plate</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">What Our Guests Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Hear from our valued patrons about their dining experiences at Saveur.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex text-secondary mb-4">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"An extraordinary culinary journey from start to finish. The attention to detail in every dish was remarkable, and the service was impeccable. Definitely worth the special trip to celebrate our anniversary."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center mr-4">
+                            <i class="ri-user-line text-gray-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Emily Richardson</h4>
+                            <p class="text-sm text-gray-500">New York, NY</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex text-secondary mb-4">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Chef Laurent's tasting menu was a revelation. Each course told a story and built upon the last. The wine pairings were expertly chosen and the staff's knowledge was impressive. A truly memorable evening."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center mr-4">
+                            <i class="ri-user-line text-gray-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">James Thompson</h4>
+                            <p class="text-sm text-gray-500">Chicago, IL</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex text-secondary mb-4">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"The lobster risotto was the best I've ever tasted, and I've traveled extensively throughout Europe. The ambiance was elegant yet comfortable, and the staff made us feel like valued guests from the moment we arrived."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center mr-4">
+                            <i class="ri-user-line text-gray-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Sophia Martinez</h4>
+                            <p class="text-sm text-gray-500">San Francisco, CA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Follow Our Culinary Journey</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Get inspired by our latest creations and behind-the-scenes moments on Instagram.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <img src="https://readdy.ai/api/search-image?query=A%20close-up%20of%20an%20elegantly%20plated%20dessert%20in%20a%20fine%20dining%20restaurant.%20The%20dessert%20features%20chocolate%20elements%20with%20artistic%20presentation%2C%20garnished%20with%20edible%20flowers%20and%20gold%20leaf.%20The%20background%20is%20blurred%20but%20shows%20a%20sophisticated%20restaurant%20setting.%20The%20lighting%20highlights%20the%20textures%20and%20details%20of%20the%20dessert.&width=300&height=300&seq=12351&orientation=squarish" alt="Instagram Post" class="w-full h-48 object-cover object-top rounded-lg shadow-md hover:opacity-90 transition duration-300">
+                
+                <img src="https://readdy.ai/api/search-image?query=A%20chef%20in%20a%20professional%20kitchen%20plating%20a%20gourmet%20dish%20with%20tweezers%2C%20showing%20careful%20attention%20to%20detail.%20The%20chef%20is%20wearing%20a%20white%20coat%20and%20is%20focused%20on%20arranging%20microgreens%20on%20the%20plate.%20The%20kitchen%20environment%20is%20clean%20and%20modern%20with%20stainless%20steel%20surfaces.%20The%20lighting%20captures%20the%20concentration%20on%20the%20chefs%20face%20and%20the%20precision%20of%20the%20plating%20process.&width=300&height=300&seq=12352&orientation=squarish" alt="Instagram Post" class="w-full h-48 object-cover object-top rounded-lg shadow-md hover:opacity-90 transition duration-300">
+                
+                <img src="https://readdy.ai/api/search-image?query=A%20beautifully%20presented%20cocktail%20in%20an%20elegant%20glass%20on%20a%20bar%20counter%20in%20an%20upscale%20restaurant.%20The%20cocktail%20has%20vibrant%20colors%20with%20garnishes%20like%20citrus%20peel%20or%20herbs.%20Ice%20cubes%20are%20visible%20in%20the%20glass%2C%20and%20theres%20a%20subtle%20bokeh%20effect%20in%20the%20background%20showing%20the%20bar%20environment.%20The%20lighting%20creates%20a%20sophisticated%20atmosphere%20typical%20of%20a%20high-end%20dining%20establishment.&width=300&height=300&seq=12353&orientation=squarish" alt="Instagram Post" class="w-full h-48 object-cover object-top rounded-lg shadow-md hover:opacity-90 transition duration-300">
+                
+                <img src="https://readdy.ai/api/search-image?query=A%20table%20setting%20in%20a%20fine%20dining%20restaurant%20with%20elegant%20tableware%2C%20crystal%20glasses%2C%20and%20fresh%20flowers.%20The%20table%20has%20white%20linen%2C%20polished%20silverware%2C%20and%20multiple%20wine%20glasses.%20The%20setting%20looks%20sophisticated%20and%20ready%20for%20a%20gourmet%20meal.%20The%20background%20shows%20a%20tastefully%20decorated%20restaurant%20interior%20with%20soft%20lighting%20creating%20an%20intimate%20atmosphere.&width=300&height=300&seq=12354&orientation=squarish" alt="Instagram Post" class="w-full h-48 object-cover object-top rounded-lg shadow-md hover:opacity-90 transition duration-300">
+                
+                <img src="https://readdy.ai/api/search-image?query=Fresh%20ingredients%20being%20prepared%20in%20a%20restaurant%20kitchen%2C%20showing%20vibrant%20vegetables%2C%20herbs%2C%20and%20seafood.%20The%20image%20captures%20the%20quality%20and%20freshness%20of%20the%20ingredients%20used%20in%20fine%20dining.%20The%20composition%20shows%20careful%20arrangement%20of%20colorful%20produce%20on%20a%20cutting%20board%20or%20prep%20surface.%20The%20lighting%20highlights%20the%20natural%20colors%20and%20textures%20of%20the%20food%20items.&width=300&height=300&seq=12355&orientation=squarish" alt="Instagram Post" class="w-full h-48 object-cover object-top rounded-lg shadow-md hover:opacity-90 transition duration-300">
+                
+                <img src="https://readdy.ai/api/search-image?query=A%20sophisticated%20wine%20service%20in%20an%20upscale%20restaurant%2C%20showing%20a%20sommelier%20or%20server%20pouring%20red%20wine%20into%20a%20crystal%20glass.%20The%20image%20captures%20the%20elegance%20of%20the%20wine%20service%20with%20proper%20technique.%20The%20background%20suggests%20a%20refined%20dining%20environment%20with%20subtle%20lighting.%20The%20focus%20is%20on%20the%20wine%20being%20poured%2C%20highlighting%20its%20rich%20color.&width=300&height=300&seq=12356&orientation=squarish" alt="Instagram Post" class="w-full h-48 object-cover object-top rounded-lg shadow-md hover:opacity-90 transition duration-300">
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
+                    <div class="w-5 h-5 flex items-center justify-center mr-2">
+                        <i class="ri-instagram-line"></i>
+                    </div>
+                    <span>@saveur_restaurant</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Visit Us</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We look forward to welcoming you for an unforgettable dining experience.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Contact Form -->
+                <div class="lg:w-1/2">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Make a Reservation</h3>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="John Smith">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="john@example.com">
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="date" class="block text-sm font-medium text-gray-700 mb-2">Date</label>
+                                <input type="date" id="date" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="time" class="block text-sm font-medium text-gray-700 mb-2">Time</label>
+                                <select id="time" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent pr-8">
+                                    <option value="">Select time</option>
+                                    <option value="17:00">5:00 PM</option>
+                                    <option value="17:30">5:30 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="18:30">6:30 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                    <option value="19:30">7:30 PM</option>
+                                    <option value="20:00">8:00 PM</option>
+                                    <option value="20:30">8:30 PM</option>
+                                    <option value="21:00">9:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="guests" class="block text-sm font-medium text-gray-700 mb-2">Number of Guests</label>
+                            <input type="number" id="guests" min="1" max="20" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="2">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Special Requests</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Please let us know if you have any dietary restrictions or special occasions."></textarea>
+                        </div>
+                        
+                        <div>
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark mr-3"></span>
+                                <span class="text-sm text-gray-700">I agree to receive updates about special events and promotions</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="bg-primary hover:bg-opacity-90 text-white px-8 py-3 rounded-button font-medium transition duration-300 whitespace-nowrap">Confirm Reservation</button>
+                    </form>
+                </div>
+                
+                <!-- Map & Info -->
+                <div class="lg:w-1/2">
+                    <div class="h-[300px] mb-8 rounded-lg overflow-hidden" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-size: cover; background-position: center;"></div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Location</h3>
+                            <p class="text-gray-600 mb-2">123 Gourmet Avenue</p>
+                            <p class="text-gray-600 mb-2">New York, NY 10001</p>
+                            <p class="text-gray-600 mb-6">United States</p>
+                            
+                            <div class="flex items-center mb-2">
+                                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                    <i class="ri-phone-line text-primary"></i>
+                                </div>
+                                <a href="tel:+12125551234" class="text-gray-600 hover:text-primary">+1 (212) 555-1234</a>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                    <i class="ri-mail-line text-primary"></i>
+                                </div>
+                                <a href="mailto:reservations@saveur.com" class="text-gray-600 hover:text-primary">reservations@saveur.com</a>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Hours</h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Monday</span>
+                                    <span class="text-gray-800 font-medium">Closed</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Tuesday - Thursday</span>
+                                    <span class="text-gray-800 font-medium">5:00 PM - 10:00 PM</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Friday - Saturday</span>
+                                    <span class="text-gray-800 font-medium">5:00 PM - 11:00 PM</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Sunday</span>
+                                    <span class="text-gray-800 font-medium">5:00 PM - 9:00 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-primary bg-opacity-10">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Join Our Culinary Community</h2>
+                <p class="text-gray-600 mb-8">Subscribe to our newsletter for exclusive recipes, chef's tips, and special event announcements.</p>
+                
+                <form class="flex flex-col sm:flex-row gap-4">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-button border-none focus:outline-none focus:ring-2 focus:ring-primary">
+                    <button type="submit" class="bg-primary hover:bg-opacity-90 text-white px-6 py-3 rounded-button font-medium transition duration-300 whitespace-nowrap">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="text-3xl font-['Pacifico'] text-white mb-6">logo</div>
+                    <p class="text-gray-400 mb-6">Experience the perfect blend of traditional techniques and modern innovation in our award-winning cuisine.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition duration-300">
+                            <i class="ri-facebook-fill text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition duration-300">
+                            <i class="ri-instagram-fill text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition duration-300">
+                            <i class="ri-twitter-x-fill text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition duration-300">
+                            <i class="ri-youtube-fill text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Menu</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Reservations</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Private Events</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Gift Cards</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Contact</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3 mt-1">
+                                <i class="ri-map-pin-line text-primary"></i>
+                            </div>
+                            <span class="text-gray-400">123 Gourmet Avenue<br>New York, NY 10001</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                <i class="ri-phone-line text-primary"></i>
+                            </div>
+                            <a href="tel:+12125551234" class="text-gray-400 hover:text-white">+1 (212) 555-1234</a>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                <i class="ri-mail-line text-primary"></i>
+                            </div>
+                            <a href="mailto:info@saveur.com" class="text-gray-400 hover:text-white">info@saveur.com</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">We Accept</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="w-12 h-8 bg-white bg-opacity-10 rounded flex items-center justify-center">
+                            <i class="ri-visa-fill text-white ri-lg"></i>
+                        </div>
+                        <div class="w-12 h-8 bg-white bg-opacity-10 rounded flex items-center justify-center">
+                            <i class="ri-mastercard-fill text-white ri-lg"></i>
+                        </div>
+                        <div class="w-12 h-8 bg-white bg-opacity-10 rounded flex items-center justify-center">
+                            <i class="ri-american-express-fill text-white ri-lg"></i>
+                        </div>
+                        <div class="w-12 h-8 bg-white bg-opacity-10 rounded flex items-center justify-center">
+                            <i class="ri-paypal-fill text-white ri-lg"></i>
+                        </div>
+                        <div class="w-12 h-8 bg-white bg-opacity-10 rounded flex items-center justify-center">
+                            <i class="ri-apple-fill text-white ri-lg"></i>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-lg font-bold mt-8 mb-4">Download Our App</h3>
+                    <div class="flex space-x-3">
+                        <a href="#" class="bg-white bg-opacity-10 px-3 py-2 rounded flex items-center hover:bg-opacity-20 transition duration-300">
+                            <i class="ri-apple-fill text-white mr-2"></i>
+                            <span class="text-sm">App Store</span>
+                        </a>
+                        <a href="#" class="bg-white bg-opacity-10 px-3 py-2 rounded flex items-center hover:bg-opacity-20 transition duration-300">
+                            <i class="ri-google-play-fill text-white mr-2"></i>
+                            <span class="text-sm">Google Play</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 Saveur Restaurant. All rights reserved.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-500 text-sm hover:text-white transition duration-300">Privacy Policy</a>
+                        <a href="#" class="text-gray-500 text-sm hover:text-white transition duration-300">Terms of Service</a>
+                        <a href="#" class="text-gray-500 text-sm hover:text-white transition duration-300">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuButton = document.querySelector('.ri-menu-line').parentElement;
+            const navLinks = document.querySelector('.md\\:flex');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                if (navLinks.classList.contains('hidden')) {
+                    navLinks.classList.remove('hidden');
+                    navLinks.classList.add('flex', 'flex-col', 'absolute', 'top-16', 'left-0', 'w-full', 'bg-black', 'bg-opacity-90', 'p-4', 'space-y-4', 'z-50');
+                } else {
+                    navLinks.classList.add('hidden');
+                    navLinks.classList.remove('flex', 'flex-col', 'absolute', 'top-16', 'left-0', 'w-full', 'bg-black', 'bg-opacity-90', 'p-4', 'space-y-4', 'z-50');
+                }
+            });
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Form validation
+            const reservationForm = document.querySelector('form');
+            if (reservationForm) {
+                reservationForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    let isValid = true;
+                    const requiredFields = ['name', 'email', 'date', 'time', 'guests'];
+                    
+                    requiredFields.forEach(field => {
+                        const input = document.getElementById(field);
+                        if (input && !input.value.trim()) {
+                            input.classList.add('border-red-500');
+                            isValid = false;
+                        } else if (input) {
+                            input.classList.remove('border-red-500');
+                        }
+                    });
+                    
+                    if (isValid) {
+                        alert('Thank you for your reservation! We will confirm your booking shortly.');
+                        reservationForm.reset();
+                    } else {
+                        alert('Please fill in all required fields.');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
