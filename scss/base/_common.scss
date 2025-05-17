@@ -13,7 +13,7 @@ a{
   .top-heading{
     font-size:var(--text-xl);
     font-family:var(--ternary-font);
-    color:var(--ternary-color);
+    color:var(--primary-color);
 }
 
 .heading-title{
@@ -54,7 +54,7 @@ img{
 
 // background
 .background{
-    background-color:var(--primary-color);
+    background-color:var(--ternary-color);
 }
 
 // common 
@@ -150,4 +150,22 @@ img{
             opacity:0.8;
         }
     }
+}
+
+
+
+// media queries
+// laptop 
+@media (max-width:1024px){
+
+}
+
+// tablet
+@media (max-width:768px){
+
+}
+
+// phone
+@media (max-width:640px){
+
 }
