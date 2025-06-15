@@ -232,12 +232,12 @@ footer .top-footer .contact i:hover {
 }
 
 .banner {
-  height: 100vh;
+  height: 90vh;
   width: 100%;
+  position: relative;
 }
 .banner img {
   filter: brightness(50%);
-  position: relative;
 }
 .banner .banner-content {
   position: absolute;
@@ -261,48 +261,4 @@ footer .top-footer .contact i:hover {
 }
 .banner .banner-content .button {
   margin-top: 20px;
-}
-
-.open {
-  background-color: var(--background-color);
-  padding: 50px;
-}
-.open ul {
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  gap: 10px;
-}
-.open ul .heading-title {
-  color: white !important;
-}
-
-.img-fixed {
-  height: 60vh;
-}
-.img-fixed img {
-  position: fixed;
-  top: 0;
-  z-index: -1;
-  width: 100%;
-}
-
-.half-half {
-  position: relative;
-  z-index: 50;
-  color: var(--background-text);
-}
-.half-half .primary {
-  background-color: var(--background-color);
-}
-.half-half .primary h2 {
-  color: white;
-}
-.half-half .primary p {
-  text-align: center;
-}
-.half-half .secondary {
-  background-color: var(--ternary-color);
 }/*# sourceMappingURL=style.css.map */

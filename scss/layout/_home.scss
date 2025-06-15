@@ -1,13 +1,12 @@
 .banner {
-    height: 100vh;
+    height: 90vh;
     width: 100%;
+    position: relative;
 
     img {
         filter: brightness(50%);
-        position: relative
+
     }
-
-
 
     .banner-content {
         position: absolute;
@@ -37,47 +36,3 @@
         }
     }
 }
-
-.open{
-    background-color:var(--background-color);
-    padding:50px;
-    ul{
-        flex-direction: column;
-        @include flex-center;
-        color:white;
-        gap:10px;
-        .heading-title{
-            color:white !important;
-        }
-    }
-}
-
-.img-fixed{
-    height:60vh;
-    img{
-    position:fixed;
-    top:0;
-    z-index:-1;
-    width:100%;
-    }
-}
-
-.half-half{
-    position:relative;
-    z-index:50;
-    color:var(--background-text);
-    .primary{
-        background-color:var(--background-color);
-        h2{
-            color:white;
-        }
-        p{
-            text-align:center;
-        }
-    }
-    .secondary{
-        background-color:var(--ternary-color);
-    }
-}
-
-
