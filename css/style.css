@@ -36,8 +36,14 @@ body {
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
 }
 
 .top-heading {
@@ -76,18 +82,25 @@ img {
   object-fit: cover;
 }
 
-.background {
-  background-color: var(--ternary-color);
+.background-fix {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 80vh; /* or set a fixed height if needed */
+  display: flex;
+  align-items: center;
 }
 
-.container {
-  max-width: 1250px;
-  margin-inline: auto;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-bottom: 0 !important;
 }
-@media (max-width: 1024px) {
-  .container {
-    padding: 0 20px !important;
-  }
+
+.background {
+  background-color: var(--ternary-color);
 }
 
 .flex-center {
@@ -176,7 +189,7 @@ header {
   width: 100%;
   z-index: 100;
   background-color: transparent;
-  padding: 10px;
+  padding: 0 5px;
 }
 header ul {
   gap: 20px;
@@ -202,11 +215,7 @@ footer {
   padding: 30px;
   color: var(--background-text);
 }
-footer .top-footer {
-  padding: 10px 0;
-  border-bottom: 1px solid rgb(68, 68, 68);
-}
-footer .top-footer .media-content {
+footer .media-content {
   width: 35px;
   height: 35px;
   border-radius: 50%;
@@ -215,29 +224,28 @@ footer .top-footer .media-content {
   justify-content: center;
   align-items: center;
 }
-footer .top-footer .media-content:hover {
+footer .media-content:hover {
   background-color: #404652;
 }
-footer .top-footer .footer-heading {
+footer .footer-heading {
   color: white !important;
   font-weight: 500 !important;
 }
-footer .top-footer li {
+footer li {
   padding: 5px 0;
 }
-footer .top-footer li a:hover {
+footer li a:hover {
   color: white;
 }
-footer .top-footer .contact i {
+footer .contact i {
   font-size: var(--text-xs);
   color: var(--ternary-color) !important;
 }
-footer .top-footer .contact i:hover {
+footer .contact i:hover {
   color: var(--ternary-color) !important;
 }
 
 .banner {
-  height: 90vh;
   width: 100%;
   position: relative;
 }
