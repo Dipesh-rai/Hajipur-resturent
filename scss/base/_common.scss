@@ -64,6 +64,7 @@ img {
     min-height: 80vh; /* or set a fixed height if needed */
     display: flex;
     align-items: center;
+    filter: brightness(80%);
 }
 
 // remove margin
@@ -98,18 +99,10 @@ h5 {
     justify-content: space-between;
 }
 
-// gap
-.gap-10 {
-    gap: 10px;
-}
-
-.gap-20 {
-    gap: 20px;
-}
-
-.gap-30 {
-    gap: 30px;
-}
+//border
+.border-btn{
+    border-bottom:1px solid rgb(153, 150, 150) !important;
+} 
 
 // buttons
 .button {
