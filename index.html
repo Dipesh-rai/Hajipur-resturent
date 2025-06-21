@@ -8,229 +8,169 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <!-- Tailswand -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <!-- icons -->
     <script src="https://kit.fontawesome.com/6f4be6c4fc.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <!-- header -->
-    <header id="header">
-        <div class="container">
-            <menu class="flex-space-between">
-                <h1 class="top-heading">Resturent</h1>
-
-                <nav>
-                    <ul class="flex">
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Events</a></li>
-                        <li><a href="">Menu</a></li>
-                        <li><a href="">Blog</a></li>
-                        <li><a href="">contact us</a></li>
-                        <li><a href="">About us</a></li>
-                    </ul>
-                </nav>
-
-                <div class="menu">
-                    <i class="fa-solid fa-bars"></i>
+    <header class="site-header">
+        <div class="top-header">
+            <div class="container">
+                <div class="flex-space-between">
+                    <div class="d-flex gap-3">
+                        <a href="" class="border-left"><i class="fa-solid fa-envelope"></i> default@gmail.com</a>
+                        <a href="" class="border-left"><i class="fa-solid fa-phone"></i> +01-123456</a>
+                        <a href=""><i class="fa-solid fa-location-dot"></i> Nepal</a>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <div class=""><a href=""><i class="fa-brands fa-facebook-f"></i></a></div>
+                        <div class=""><a href=""><i class="fa-brands fa-instagram"></i></a></div>
+                        <div class=""><a href=""><i class="fa-brands fa-x-twitter"></i></a></div>
+                        <div class=""><a href=""><i class="fa-brands fa-youtube"></i></a></div>
+                    </div>
                 </div>
+            </div>
+        </div>
+        <div class="main-nav">
+            <div class="container p-0">
+                <div class="flex-space-between m-0 p-0">
+                    <h1 class="top-heading">Resturent</h1>
 
-            </menu>
+                    <nav>
+                        <ul class="flex-center-center gap-3">
+                            <li><a href="">Home</a></li>
+                            <li><a href="">Events</a></li>
+                            <li><a href="">Menu</a></li>
+                            <li><a href="">Blog</a></li>
+                            <li><a href="">contact us</a></li>
+                            <li><a href="">About us</a></li>
+                            <button class="button-2">Reserve Table</button>
+                        </ul>
+                    </nav>
+
+                    <div class="menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </header>
 
     <!-- banner -->
-    <section>
-        <div class="owl-carousel">
-            <div class="banner"> <img src="img/banner.jpg" alt="">
-                <div class="container">
-                    <div class="banner-content">
-                        <div class="banner-header">Experience Authentic Nepali Flavors</div>
-                        <p>Handcrafted momo, thakali thali, and Himalayan spices since 1995.</p>
-                        <div class="flex">
-                            <a href="" class="button">Reserve a Table</a>
-                            <a href="" class="button">Explore Menu</a>
-                        </div>
-                    </div>
+    <section class="banner">
+        <img src="img/banner.jpg" alt="" loading="lazy">
+        <div class="container">
+            <div class="banner-content">
+                <div class="banner-header">Welcome to Resturent</div>
+                <div class="">Delivering great food for more than 18 years!</div>
+                <div class="f-flex gap-3 mt-3">
+                    <button class="button-2"><a href="">Our Menu</a></button>
+                    <button class="button-2"><a href="">Book a Table</a></button>
                 </div>
-            </div>
-            <div>
-                <div class="banner"> <img src="img/banner.jpg" alt="">
-                    <div class="container">
-                        <div class="banner-content">
-                            <div class="banner-header">Experience Authentic Nepali Flavors</div>
-                            <p>Handcrafted momo, thakali thali, and Himalayan spices since 1995.</p>
-                            <div class="flex">
-                                <a href="" class="button">Reserve a Table</a>
-                                <a href="" class="button">Explore Menu</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="banner"> <img src="img/banner.jpg" alt="">
-                    <div class="container">
-                        <div class="banner-content">
-                            <div class="banner-header">Experience Authentic Nepali Flavors</div>
-                            <p>Handcrafted momo, thakali thali, and Himalayan spices since 1995.</p>
-                            <div class="flex">
-                                <a href="" class="button">Reserve a Table</a>
-                                <a href="" class="button">Explore Menu</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- open -->
-    <section class="time">
-        <div class="open">
-            <div class="container">
-                <ul>
-                    <li class="heading-title">Dine In</li>
-
-                    <li>Wednesday & Thursday: 5.30 PM - 9.30 PM</li>
-
-                    <li>Friday & Saturday: 5.00 PM - 10.00 PM</li>
-
-                    <li>Sunday: 5.00 PM - 9:30 PM</li>
-
-                    <li>Closed Monday & Tuesday</li>
-                </ul>
-            </div>
-        </div>
-
-    </section>
-
-
-    <!-- img -->
-    <section class="img-fixed">
-        <img src="img/wine.jpg" alt="">
-    </section>
-
-    <!-- story -->
-    <section class="half-half">
-        <div class="grid sm:grid-cols-2 grid-cols-1 ">
-            <div class="primary p-[30px] flex-center-center order-2 sm:order-1">
-                <div class="half-content">
-                    <h2 class="heading-title text-center">Our Story</h2>
-                    <p class="mt-3">At [Restaurant Name], it all started with a pan, a passion, and a dream.</p>
-
-                    <p class="mt-1">What began as a family recipe shared around a small kitchen table has grown into a
-                        place where
-                        flavor meets soul. Every dish we serve is crafted with love, using fresh ingredients, bold
-                        spices, and stories passed down through generations.</p>
-
-                    <p class="mt-1">We’re not just feeding stomachs — we’re serving memories.</p>
-
-                    <p class="mt-1">Come as a guest, leave as family.</p>
-                </div>
-            </div>
-            <div class="secondary p-[50px]">
-                <img src="img/barphoto.jpeg" alt="">
             </div>
         </div>
     </section>
 
-    <!-- img -->
-    <section class="img-fixed">
-        <img src="img/wine.jpg" alt="">
-    </section>
+    <section class="about">
+        <div class="row align-items-center">
+            <div class="col-xl-6 p-5">
+                <article class="content">
+                    <h2>Voluptatem dignissimos provident</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
 
-    <!-- Events -->
-    <section class="half-half">
-        <div class="grid sm:grid-cols-2 grid-cols-1 ">
-            <div class="primary p-[30px] flex-center-center order-2 sm:order-1">
-                <div class="half-content">
-                    <h2 class="heading-title text-center">Menu</h2>
-                    <p class="mt-3">At [Restaurant Name], it alls started with a pan, a passion, and a dream.</p>
-
-                    <p class="mt-1">What began as a family recipe shared around a small kitchen table has grown into a
-                        place where
-                        flavor meets soul. Every dish we serve is crafted with love, using fresh ingredients, bold
-                        spices, and stories passed down through generations.</p>
-
-                    <div class="flex items-center justify-center mt-2">
-                        <div class="button ">Explore menu</div>
-                    </div>
-                </div>
+                    <ul>
+                        <li>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                        <li>Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                        <li>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                            reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.
+                        </li>
+                    </ul>
+                    <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                        cupidatat non proident</p>
+                </article>
             </div>
-            <div class="secondary p-[50px] order-1 sm:order-2">
-                <img src="img/barphoto.jpeg" alt="">
-            </div>
+            <div class="col-xl-6"><img src="img/barphoto.jpeg" alt=""></div>
         </div>
     </section>
 
     <!-- footer -->
     <footer>
-        <div class="top-footer grid lg:grid-cols-5 mt-5">
+        <div class="container">
+            <div class="top-footer row">
 
-            <div class="first col-span-2">
-                <div class="top-heading">Resturent</div>
-                <div class="footer-content my-[20px]">Elevating dining experiences through culinary innovation and
-                    exceptional
-                    service since 2015.</div>
-                <div class="media mt-3 flex gap-2">
-                    <div class="media-content "><a href=""><i class="fa-brands fa-facebook-f"></i></a></div>
-                    <div class="media-content"><a href=""><i class="fa-brands fa-instagram"></i></a></div>
-                    <div class="media-content"><a href=""><i class="fa-brands fa-x-twitter"></i></a></div>
-                    <div class="media-content"><a href=""><i class="fa-brands fa-youtube"></i></a></div>
+                <div class="col-lg-5">
+                    <div class="top-heading">Resturent</div>
+                    <div class="footer-content my-[20px]">Elevating dining experiences through culinary innovation and
+                        exceptional
+                        service since 2015.</div>
+                    <div class="media mt-3 d-flex gap-2">
+                        <div class="media-content "><a href=""><i class="fa-brands fa-facebook-f"></i></a></div>
+                        <div class="media-content"><a href=""><i class="fa-brands fa-instagram"></i></a></div>
+                        <div class="media-content"><a href=""><i class="fa-brands fa-x-twitter"></i></a></div>
+                        <div class="media-content"><a href=""><i class="fa-brands fa-youtube"></i></a></div>
+                    </div>
+
+
                 </div>
 
+                <div class="col-lg-2">
+                    <div class="second-heading footer-heading">Quick Links</div>
+                    <ul class="mt-2">
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Menu</a></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Reservations</a></li>
+                        <li><a href="">Private Events</a></li>
+                        <li><a href="">Gift Cards</a></li>
+                    </ul>
+                </div>
 
-            </div>
+                <div class="col-lg-2">
+                    <div class="second-heading footer-heading">Legal</div>
+                    <ul class="mt-2">
+                        <li><a href="">Privacy Policy</a></li>
+                        <li><a href="">Terms of Service</a></li>
+                        <li><a href="">Cookie Policy</a></li>
+                        <li><a href="">Accessibility</a></li>
+                    </ul>
+                </div>
 
-            <div class="link-content ">
-                <div class="second-heading footer-heading">Quick Links</div>
-                <ul class="mt-2">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Menu</a></li>
-                    <li><a href="">About Us</a></li>
-                    <li><a href="">Reservations</a></li>
-                    <li><a href="">Private Events</a></li>
-                    <li><a href="">Gift Cards</a></li>
-                </ul>
-            </div>
+                <div class="col-lg-3">
+                    <div class="second-heading footer-heading">Contact</div>
+                    <ul class="contact mt-2">
+                        <li><a href="" class="flex items-center gap-3"><i class="fa-solid fa-location-dot"></i>
+                                Chabhil/kathmandu</a></li>
+                        <li><a href="" class="flex items-center gap-3"><i class="fa-solid fa-phone"></i>+1 (212)
+                                555-1234</a></li>
+                        <li><a href="" class="flex items-center gap-3"><i
+                                    class="fa-solid fa-envelope"></i>info@saveur.com</a></li>
 
-            <div class="link-content">
-                <div class="second-heading footer-heading">Legal</div>
-                <ul class="mt-2">
-                    <li><a href="">Privacy Policy</a></li>
-                    <li><a href="">Terms of Service</a></li>
-                    <li><a href="">Cookie Policy</a></li>
-                    <li><a href="">Accessibility</a></li>
-                </ul>
-            </div>
+                    </ul>
+                </div>
 
-            <div class="link-content">
-                <div class="second-heading footer-heading">Contact</div>
-                <ul class="contact mt-2">
-                    <li><a href="" class="flex items-center gap-3"><i class="fa-solid fa-location-dot"></i>
-                            Chabhil/kathmandu</a></li>
-                    <li><a href="" class="flex items-center gap-3"><i class="fa-solid fa-phone"></i>+1 (212)
-                            555-1234</a></li>
-                    <li><a href="" class="flex items-center gap-3"><i
-                                class="fa-solid fa-envelope"></i>info@saveur.com</a></li>
-
-                </ul>
             </div>
 
         </div>
-        <div class="footer-bottom py-4">
+        <div class="footer-bottom ">
             <div class="text-center">© 2025 Resturent. All rights reserved.</div>
         </div>
     </footer>
 
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+
+    <!-- main js -->
     <script src="js/main.js"></script>
-    <script src="js/jquery.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/carousel.js"></script>
+
 
 
 </body>

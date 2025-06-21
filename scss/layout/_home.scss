@@ -1,14 +1,9 @@
 .banner {
-    height: 100vh;
-    width: 100%;
-
+    position:relative;
     img {
         filter: brightness(50%);
-        position: relative
+        height:90vh;
     }
-
-
-
     .banner-content {
         position: absolute;
         top: 50%;
@@ -18,15 +13,18 @@
         justify-content: center;
         flex-direction: column;
         margin-block: auto;
-
+        font-size:var(--text-lg);
+        font-family:var(--secondary-font);
         .banner-header {
-            font-size: var(--text-xl);
+            font-size: var(--text-3xl);
             font-family: var(--primary-font);
             color: var(--primary-color);
             font-weight: 600;
             margin-bottom: 10px;
         }
-
+        button{
+            font-size:1rem;
+        }
         .flex {
             gap: 10px;
         }
@@ -38,46 +36,8 @@
     }
 }
 
-.open{
+.about{
     background-color:var(--background-color);
-    padding:50px;
-    ul{
-        flex-direction: column;
-        @include flex-center;
-        color:white;
-        gap:10px;
-        .heading-title{
-            color:white !important;
-        }
-    }
+    color:white;
 }
-
-.img-fixed{
-    height:60vh;
-    img{
-    position:fixed;
-    top:0;
-    z-index:-1;
-    width:100%;
-    }
-}
-
-.half-half{
-    position:relative;
-    z-index:50;
-    color:var(--background-text);
-    .primary{
-        background-color:var(--background-color);
-        h2{
-            color:white;
-        }
-        p{
-            text-align:center;
-        }
-    }
-    .secondary{
-        background-color:var(--ternary-color);
-    }
-}
-
 
