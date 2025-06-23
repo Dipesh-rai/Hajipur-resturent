@@ -40,6 +40,8 @@ body {
   font-size: 16px;
   font-family: var(--secondary-font);
   color: var(--body-text);
+  background-color: var(--text-heading) !important;
+  color: white !important;
 }
 
 a {
@@ -79,8 +81,30 @@ h4 {
   font-size: var(--text-3xl) !important;
 }
 
+.normal-heading {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  font-family: var(--primary-font);
+  color: var(--secondary-color);
+}
+
+.section-heading {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  font-family: var(--primary-font);
+  color: var(--secondary-color);
+}
+
+.section-content {
+  color: white;
+}
+
 .background {
   background-color: var(--ternary-color);
+}
+
+.color-white {
+  color: white !important;
 }
 
 .primary-font {
@@ -121,6 +145,12 @@ h4 {
   justify-content: space-between;
 }
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .button {
   padding: 10px 20px;
   background-color: var(--ternary-color);
@@ -157,7 +187,11 @@ h4 {
   color: white;
 }
 
-article.content h1, article.content h2, article.content h3, article.content h4, article.content h5 {
+article.content h1,
+article.content h2,
+article.content h3,
+article.content h4,
+article.content h5 {
   margin-bottom: 5px;
 }
 article.content p {
@@ -171,6 +205,30 @@ article.content ul {
 
 .brown-color {
   color: var(--ternary-color);
+}
+
+.top-icon {
+  margin-inline: auto;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.205);
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.26) !important;
+  color: white;
+}
+.card img {
+  position: relative;
+}
+.card .relative-date {
+  position: absolute;
+  top: 15px;
+  left: 80%;
+  background-color: var(--primary-color);
+  padding: 5px;
+  color: white;
 }
 
 .site-header {
@@ -236,11 +294,11 @@ article.content ul {
   left: 0;
   width: 100%;
   animation: smoothScroll 0.5s forwards;
-  background-color: var(--primary-color);
+  background-color: var(--ternary-color);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 .site-header.scrolled .main-nav nav ul li {
-  color: black !important;
+  color: white !important;
 }
 @keyframes smoothScroll {
   from {
@@ -296,6 +354,7 @@ footer .top-footer .contact i:hover {
 .banner img {
   filter: brightness(50%);
   height: 90vh;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .banner .banner-content {
   position: absolute;
@@ -326,7 +385,29 @@ footer .top-footer .contact i:hover {
   margin-top: 20px;
 }
 
+.opening {
+  color: white;
+}
+
 .about {
   background-color: var(--background-color);
   color: white;
+}
+
+.our-menu {
+  position: relative;
+}
+.our-menu img {
+  filter: brightness(30%);
+  height: 60vh;
+}
+.our-menu .menu-content {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+}
+
+.background {
+  background-color: var(--ternary-color);
 }/*# sourceMappingURL=style.css.map */

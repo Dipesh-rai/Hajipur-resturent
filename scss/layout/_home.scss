@@ -3,6 +3,7 @@
     img {
         filter: brightness(50%);
         height:90vh;
+        box-shadow:$shadow-md;
     }
     .banner-content {
         position: absolute;
@@ -35,9 +36,30 @@
         }
     }
 }
+.opening{
+    color:white;
+}
 
 .about{
     background-color:var(--background-color);
     color:white;
+}
+
+.our-menu{
+    position:relative;
+    img{
+        filter: brightness(30%);
+        height:60vh;
+    }
+    .menu-content{
+        position:absolute;
+        top:50%;
+        transform:translate(-50%, -50%);
+        left:50%;
+    }
+}
+
+.background{
+    background-color:var(--ternary-color)
 }
 

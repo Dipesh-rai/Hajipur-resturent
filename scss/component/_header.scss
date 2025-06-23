@@ -74,13 +74,13 @@
             left: 0;
             width: 100%;
             animation: smoothScroll 0.5s forwards;
-            background-color: var(--primary-color);
+            background-color: var(--ternary-color);
             box-shadow: $shadow-glow;
 
             nav {
                 ul {
                     li {
-                        color: black !important;
+                        color: white !important;
                     }
                 }
             }
