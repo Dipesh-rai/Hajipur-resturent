@@ -1,10 +1,12 @@
 .banner {
-    position:relative;
+    position: relative;
+
     img {
         filter: brightness(50%);
-        height:90vh;
-        box-shadow:$shadow-md;
+        height: 90vh;
+        box-shadow: $shadow-md;
     }
+
     .banner-content {
         position: absolute;
         top: 50%;
@@ -14,8 +16,9 @@
         justify-content: center;
         flex-direction: column;
         margin-block: auto;
-        font-size:var(--text-lg);
-        font-family:var(--secondary-font);
+        font-size: var(--text-lg);
+        font-family: var(--secondary-font);
+
         .banner-header {
             font-size: var(--text-3xl);
             font-family: var(--primary-font);
@@ -23,9 +26,11 @@
             font-weight: 600;
             margin-bottom: 10px;
         }
-        button{
-            font-size:1rem;
+
+        button {
+            font-size: 1rem;
         }
+
         .flex {
             gap: 10px;
         }
@@ -36,30 +41,32 @@
         }
     }
 }
-.opening{
-    color:white;
+
+.opening {
+    color: white;
 }
 
-.about{
-    background-color:var(--background-color);
-    color:white;
+.about {
+    background-color: var(--background-color);
+    color: white;
 }
 
-.our-menu{
-    position:relative;
-    img{
+.our-menu {
+    position: relative;
+
+    img {
         filter: brightness(30%);
-        height:60vh;
+        height: 60vh;
     }
-    .menu-content{
-        position:absolute;
-        top:50%;
-        transform:translate(-50%, -50%);
-        left:50%;
+
+    .menu-content {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        left: 50%;
     }
 }
 
-.background{
-    background-color:var(--ternary-color)
+.background {
+    background-color: var(--ternary-color)
 }
-

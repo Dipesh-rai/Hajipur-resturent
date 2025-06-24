@@ -1,6 +1,6 @@
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
     box-sizing: border-box;
 }
 
@@ -9,7 +9,7 @@ body {
     font-family: var(--secondary-font);
     color: var(--body-text);
     background-color: var(--text-heading) !important;
-    color:white !important;
+    color: #E5E7EB !important;
 }
 
 a {
@@ -31,7 +31,32 @@ img {
     object-fit: cover;
 }
 
+// margin
+.container {
+    margin-inline: auto !important;
+    padding: 0;
+
+    // landscapes phones
+    @media (max-width:576px) {
+        padding: 0 20px !important;
+
+    }
+}
+
+.margin-inline {
+    margin-inline: auto;
+}
+
 // heading
+.top-heading {
+    font-family: var(--ternary-font);
+    color: var(--secondary-color);
+    margin-bottom: 0 !important;
+    padding: 5px 0 !important;
+    font-size: var(--text-3xl);
+
+}
+
 h1 {
     font-size: var(--text-3xl);
 }
@@ -56,19 +81,37 @@ h4 {
     font-size: var(--text-lg);
     font-weight: 700;
     font-family: var(--primary-font);
-    color: var(--secondary-color);
+    color: var(--heading-color);
 }
 
 .section-heading {
     font-size: var(--text-xl);
     font-weight: 700;
     font-family: var(--primary-font);
-    color: var(--secondary-color);
+    color: var(--heading-color);
 }
 
 // contant
 .section-content {
     color: white;
+}
+
+// a
+.link-decoration{
+    color:#FF6B00 !important;
+    text-decoration: underline !important;
+    &:hover{
+        color:var(--link-hover) !important;
+    }
+}
+
+// line clamp
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
 }
 
@@ -77,9 +120,10 @@ h4 {
     background-color: var(--ternary-color);
 }
 
-.color-white{
-    color:white !important;
+.color-white {
+    color: white !important;
 }
+
 //fonr-family
 .primary-font {
     font-family: var(--primary-font);
@@ -99,10 +143,11 @@ h4 {
 
 // border
 .border-left {
-    padding-right: 10px;
+    padding-right: 10px !important;
     border-right: 1px solid white;
 }
 
+// flex
 .flex-center {
     display: flex;
     align-items: center;
@@ -126,10 +171,22 @@ h4 {
     align-items: center;
 }
 
+.flex-responsive {
+    width: 100%;
+    @include flex-space-between;
+}
+
+//tablets
+@media (max-width:768px) {
+    .flex-responsive {
+        @include flex-column;
+        gap: 30px;
+    }
+}
 
 // buttons
 .button {
-    padding: 10px 20px;
+    padding: 10px 20px !important;
     background-color: var(--ternary-color);
     color: white;
     width: fit-content;
@@ -142,7 +199,7 @@ h4 {
 }
 
 .button-1 {
-    padding: 10px 20px;
+    padding: 10px 20px !important;
     background-color: var(--ternary-color);
     color: white;
     width: fit-content;
@@ -155,7 +212,7 @@ h4 {
 }
 
 .button-2 {
-    padding: 10px 20px;
+    padding: 10px 20px !important;
     border: 1px solid #800020;
     transition: 0.5s;
     border-radius: 15px;
@@ -169,6 +226,7 @@ h4 {
 
 article {
     &.content {
+        color: #E5E7EB !important;
 
         h1,
         h2,
@@ -206,15 +264,60 @@ article {
 .card {
     background-color: rgba(255, 255, 255, 0.26) !important;
     color: white;
-    img{
-        position:relative;
+    overflow: hidden;
+    box-shadow:$shadow-xl;
+
+    img {
+        position: relative;
+        transition: 0.5s;
     }
-    .relative-date{
-        position:absolute;
-        top:15px;
-        left:80%;
-        background-color:var(--primary-color);
-        padding:5px;
-        color:white;
+
+    .relative-date {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        ;
+        background-color: rgba(0, 0, 0, 0.6);
+        /* semi-transparent black */
+        backdrop-filter: blur(6px);
+        /* frosted glass effect */
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        text-align: center;
+        white-space: nowrap;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        padding: 5px !important;
+        color: white;
+    }
+
+    &:hover {
+        img {
+            transform: scale(1.5);
+        }
     }
 }
+
+.card-body {
+    z-index: 50;
+    background-color: #1F2937 !important;
+}
+
+section {
+    width: 100% !important;
+}
+
+// large desktop
+@media (max-width:1400px) {}
+
+// desktop 
+@media (max-width:1200px) {}
+
+// laptop
+@media (max-width:992px) {}
+
+//tablets
+@media (max-width:768px) {}
+
+// landscapes phones\
+@media (max-width:576px) {}

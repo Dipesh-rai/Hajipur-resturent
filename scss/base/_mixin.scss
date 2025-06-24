@@ -2,5 +2,14 @@
     display:flex !important;
     justify-content:center !important;
     align-items:center !important;
-    
+}
+@mixin flex-space-between{
+    display:flex !important;
+    justify-content:space-between !important;
+    align-items:center !important;
+}
+@mixin flex-column{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
 }

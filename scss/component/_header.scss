@@ -5,13 +5,24 @@
     transition: all 0.3s ease-in-out;
 
     .top-header {
+        width:100%;
         background: var(--ternary-color);
         color: white;
         text-align: center;
-        padding: 5px;
+        padding: 5px !important;
         transition: transform 0.4s ease;
-        font-family:var(--top-font);
-        font-size:var(--text-sm);
+        font-family: var(--top-font);
+        font-size: var(--text-sm);
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+
+        .contact-details {
+
+            // laptop
+            @media (max-width:992px) {
+                display: none !important;
+            }
+        }
+
         a {
             &:hover {
                 color: var(--primary-color) !important;
@@ -21,13 +32,14 @@
     }
 
     .main-nav {
-        padding: 5px 0;
+        padding: 5px 0 !important;
         background: transparent;
         transition: background-color 0.5s ease, transform 0.5s ease;
         z-index: 99;
         position: relative;
-        background-color:#eaac38c5;
-        font-family:var(--secondary-font);
+        background-color: #0A1F44;
+        font-family: var(--secondary-font);
+
         nav {
             ul {
                 li {
@@ -35,6 +47,7 @@
 
                     a {
                         position: relative;
+
                         &::before {
                             position: absolute;
                             top: 100%;
@@ -42,49 +55,60 @@
                             content: "";
                             width: 0;
                             height: 2px;
-                            transition:0.2s;
+                            transition: 0.2s;
                             background-color: var(--primary-color);
                         }
-                        &:hover::before{
-                            width:100%;
+
+                        &:hover::before {
+                            width: 100%;
                         }
                     }
                 }
             }
+
+            // laptop
+            @media (max-width:992px) {
+                display: none;
+            }
+
         }
 
-        .top-heading {
-            font-family: var(--ternary-font);
-            color: var(--secondary-color);
-        }
+     
 
         .menu {
             display: none;
+
+            // laptop
+            @media (max-width:992px) {
+                display: block;
+            }
         }
     }
 
     &.scrolled {
-        .top-header {
-            transform: translateY(-100%);
-        }
-
         .main-nav {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             animation: smoothScroll 0.5s forwards;
-            background-color: var(--ternary-color);
+            background-color: #2B2B2B;
             box-shadow: $shadow-glow;
 
             nav {
                 ul {
                     li {
-                        color: white !important;
+                        color: white;
+                        &:hover{
+                            color:var(--primary-color)!important;
+                        }
                     }
                 }
             }
         }
+        .top-header {
+            transform: translateY(-100%);
+        }        
     }
 
     @keyframes smoothScroll {

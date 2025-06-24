@@ -2,9 +2,8 @@ footer {
     background-color: var(--background-color);
     padding: 30px;
     color: var(--background-text);
-
     .top-footer {
-        padding:10px 0;
+        padding:10px 0 !important;
         border-bottom:1px solid rgb(68, 68, 68);
         .media-content {
             width: 35px;
@@ -21,10 +20,12 @@ footer {
         .footer-heading {
             color: white !important;
             font-weight: 500 !important;
+            font-size:var(--text-lg);
+            color:var(--secondary-color) !important;
         }
 
         li {
-            padding: 5px 0;
+            padding: 5px 0 !important;
 
             
 
